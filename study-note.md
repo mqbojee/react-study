@@ -1,3 +1,43 @@
+# Sublime Text的Package Control-----install Start
+import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
+
+以上还有重要的一步，需要直接ping http://sublime.wbond.net/，得到ip地址，然后加入到hosts文件中。
+
+依然无法安装其他插件，原因是sublime-settings中的
+"channels": [
+		"https://packagecontrol.io/channel_v3.json"
+	],
+地址无法访问。
+后下载至本地，在搭建TOMCAT服务器才能成功。未成功GIT
+"channels": [
+        "http://127.0.0.1:8080/pms/resources/js/channel_v3.json"
+    ]
+中间有直接ping packagecontrol.io得到ip地址 50.116.34.243 加入hosts中
+# Sublime Text的Package Control-----install End
+
+# sublime markdown插件 start
+1.sublime设置高亮的快捷键 shift+ctrl+p 输入ssm “set syntax"
+2.之后，按已经设置好的快捷键"alt+m"(preferences-->key binding-->user settings)
+3.或者按shift+ctrl+p--> Markdown Preview: preview in browser"
+4.shift+ctrl+p-->输入markdown preview-->选择save to html(会在当前目录生成html文件)
+# sublime markdown插件 end
+
+# sublime evernote插件 start
+国内：https://app.yinxiang.com/api/DeveloperToken.action 
+国际：https://www.evernote.com/api/DeveloperToken.action
+Create a developer token
+Preferences > Package Settings > Evernote >Settings - User
+add以下内容：
+{
+ "noteStoreUrl": "",
+ "token": ""
+}
+# sublime evernote插件 end
+#------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
   1. ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在2015年6月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。
   2. 用工具ES-Checker来检查各种运行环境对ES6的支持情况
 npm install -g es-checker
