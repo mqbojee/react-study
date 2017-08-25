@@ -89,16 +89,28 @@ Markdown语法快速入门
 **语法：** MarkDown的图片语法和链接语法很相似。同样有 行内 和 参考 两种形式，行内形式：`![提示用的文本](图片的地址 图片的标题)` ，参考形式：`![提示用的文本][序号]` 。
 **案例：** 代码及效果依次如下
 
-	![测试](https://raw.githubusercontent.com/xiaoxinfly/resources/master/images/image1.jpeg "测试")
-
-> ![测试](https://raw.githubusercontent.com/xiaoxinfly/resources/master/images/image1.jpeg "测试")
-
-
+	![测试1](https://raw.githubusercontent.com/xiaoxinfly/resources/master/images/image1.jpeg "测试1")
+	![测试2][3]
+	[3]: https://raw.githubusercontent.com/xiaoxinfly/resources/master/images/totoro-1.jpg "测试2" 
 
 
+> ![测试1](https://raw.githubusercontent.com/xiaoxinfly/resources/master/images/image1.jpeg "测试1")
+> ![测试2][3]
 
+[3]: https://raw.githubusercontent.com/xiaoxinfly/resources/master/images/totoro-1.jpg "测试2" 
 
+#### 八、代码语法
+**语法：** MarkDown的代码语法，用 “``” 来标记一部分文字可标识代码，除此之外，如果前后都有空行，中间行的缩进4个空格或者一个tab，就能标识为代码块。
+**案例：** 代码及效果依次如下
 
+标识input框标签：`<input/>`
 
+	`<input/>`
+
+标识代码块示意：
+
+	<div>
+		<input type="text" title="代码块案例" />
+	</div>
 
 [文档所在GitHub地址，点击查看](https://raw.githubusercontent.com/xiaoxinfly/react-study/master/study-markdown.md)
