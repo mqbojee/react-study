@@ -13,6 +13,8 @@ import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.
         "http://127.0.0.1:8080/pms/resources/js/channel_v3.json"
     ]
 中间有直接ping packagecontrol.io得到ip地址 50.116.34.243 加入hosts中
+https://raw.githubusercontent.com/xiaoxinfly/resources/master/sublime/channel_v3.json
+这个地址才对
 # Sublime Text的Package Control-----install End
 
 # sublime markdown插件 start
@@ -32,6 +34,14 @@ add以下内容：
  "noteStoreUrl": "",
  "token": ""
 }
+添加快捷键
+[
+	{ "keys": ["ctrl+e", "ctrl+o"], "command": "open_evernote_note" },
+    { "keys": ["ctrl+s"], "command": "save_evernote_note", "context": [{"key": "evernote_note"}, {"key": "evernote_has_guid"}] },
+    { "keys": ["ctrl+s"], "command": "send_to_evernote", "context": [{"key": "evernote_note"}, {"key": "evernote_has_guid", "operator": "equal", "operand": false}] }
+]
+ctrl+e，ctrl+o依次按完后会打开印象笔记
+ctrl+s按完后会将笔记保存并且同步到印象笔记
 # sublime evernote插件 end
 #------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 #------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -76,3 +86,6 @@ npm install --save-dev babel-preset-stage-3
 }
   ● 命令行转码bable-cli——Babel提供的babel-cli工具用于命令行转码
 安装命令如下
+
+一个tab或者4个空格，markdown会变成代码格式。。。
+markdown的文本内容怎么缩进
