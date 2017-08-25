@@ -113,4 +113,4 @@ Markdown语法快速入门
 		<input type="text" title="代码块案例" />
 	</div>
 
-[文档所在GitHub地址，点击查看](https://raw.githubusercontent.com/xiaoxinfly/react-study/master/study-markdown.md)
+[文档源码所在GitHub地址，点击查看](https://raw.githubusercontent.com/xiaoxinfly/react-study/master/study-markdown.md)
