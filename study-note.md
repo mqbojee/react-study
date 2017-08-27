@@ -43,10 +43,15 @@ add以下内容：
 ctrl+e，ctrl+o依次按完后会打开印象笔记
 ctrl+s按完后会将笔记保存并且同步到印象笔记
 # sublime evernote插件 end
+
+### sublime install theme start
+1. ctrl+shift+p->install package->搜索"Theme – Soda"->Preferences->settings->user->添加"theme": "Soda Dark.sublime-theme"
+2. ctrl+shift+p->install package->搜索"Monokai Extended"->Preferences->Color Theme->Monokai Extended(最后一项)
+3. ctrl+shift+p->install package->搜索"Markdown Extended"->标记文档为Markdown Extended即可高亮
+
+### sublime install theme end
 #------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 #------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-
 
   1. ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在2015年6月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。
   2. 用工具ES-Checker来检查各种运行环境对ES6的支持情况
