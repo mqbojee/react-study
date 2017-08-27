@@ -50,6 +50,13 @@ ctrl+s按完后会将笔记保存并且同步到印象笔记
 3. ctrl+shift+p->install package->搜索"Markdown Extended"->标记文档为Markdown Extended即可高亮
 
 ### sublime install theme end
+
+### git start
+1. 创建和切换到新分支 git branch -b [分支名] 相当于 git branch develop(创建新分支)后，git checkout develop(切换到develop分支)
+2. git add . 将当前目录下所有已经更改和添加的文件添加到分支中
+3. git commit执行后，进入VIM模式，按insert或c键可进行编辑状态，当编辑结束后按ESC键，再按大写状态下的Z键保存编辑信息并提交
+4. git status 可查看git当前文件是否已修改，并列出来
+### git end
 #------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 #------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
