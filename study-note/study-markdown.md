@@ -161,7 +161,4 @@ MarkDown支持以下这些符号前面加上反斜杠来帮助普通的符号
 	!   惊叹号
 	自动链
 
-#### 十一、数学公式
-
-
 [文档源码所在GitHub地址，点击查看](https://raw.githubusercontent.com/xiaoxinfly/react-study/develop/study-markdown.md)
