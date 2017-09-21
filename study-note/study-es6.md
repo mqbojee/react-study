@@ -1,38 +1,50 @@
-  1. ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在2015年6月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。
-  2. 用工具ES-Checker来检查各种运行环境对ES6的支持情况
-npm install -g es-checker
-es-checker
-3.Babel转码器
-Babel是一个广泛使用的ES6转码器，可以将ES6代码转为ES5代码，从而在现有环境执行。这意味着，可以用ES6的方式编写程序，又不用担心现有环境是否支持。
-例子：
-//转码前
-input.map(item => item + 1);
-//转码后
-input.map(function(item){
-return item + 1;
-});
-上面的原始代码用了箭头函数，Babel将其转为普通函数，就能在不支持箭头函数的JavaScript环境执行。
-  ● 配置文件.babelrc
-位置：Babel的配置文件是.babelrc，存放在项目的根目录下；
-功能：用来设置转码规则的插件；
-基本格式：
-{
-"presets":[],
-"plugins":[]
-}
-presets字段设定转码规则 ，可以根据需要安装。
-# 最新转码规则
-npm install --save-dev babel-preset-latest
-#react 转码规则
-npm install --save-dev babel-preset-react
-除此外还有针对不同阶段的转码规则
-npm install --save-dev babel-preset-stage-0
-npm install --save-dev babel-preset-stage-1
-npm install --save-dev babel-preset-stage-2
-npm install --save-dev babel-preset-stage-3
-{
-"presets":["latest","react","stage-2"],
-"plugins":[]
-}
-  ● 命令行转码bable-cli——Babel提供的babel-cli工具用于命令行转码
-安装命令如下
+# SCMAScript 6 入门
+### 一、let和const命令
+#### 1. let命令
+**基本用法：** `let` 命令用来声明变量，用法类似 `var` ，在 `let` 命令所在的代码块内有效。比如 `for` 循环计数，作用域为 `for` 循环，有文章可做。
+
+**不存在变量提升：** 所谓变量提升，即变量可在声明前使用，其值为 `underfined` 。
+当使用 `let` 语法时，必须在声明变量在后使用，否则报 `ReferenceError` 错误。
+
+**暂时性死区：** 只要块级作用域内存在 `let` 命令，就不再受外部的影响，凡是在声明之前，该变量都不可用，这种现象被称为“暂时性死区”（temporal dead zone，简称TDZ）。
+
+**不允许重复声明:** `let` 不允许在相同作用域内，重复声明同一个变量，更不在函数内部重新声明参数（但是可以写在代码块中）。
+
+#### 2. 块级作用域
+**为什么需要块级作用域？** 为了避免变量泄露成全局变量和避免变量提升。
+
+**ES6的块级作用域：** 
+
+	function f1(){
+		let n =5;
+		if(true){
+			let n = 10;
+		}
+		console.log(n);//5
+	}
+
+**块级作用域与函数声明：** 与变量类似，改善了ES5中不能在块级作用域中声明函数的弊端。同时也避免了函数提升的问题。
+
+**do 表达式：** 使得块级作用域可以变为表达式，便可拥有返回值，但是需在块级作用域之前加上 `do` ，使它变为 `do` 表达式。
+
+	let x = do {
+		let t = f();
+		t * t + 1;
+	}
+
+上面代码中，变量 `x` 会得到整个块级作用域的返回值
+
+#### 3. const命令
+**基本用法：**
+
+1. `const` 声明一个只读的常量。一旦声明，常量的值就不能改变。
+2. `const` 声明的变量不得改变值，这意味着，`const` 一旦声明变量，就必须立即初始化，不能留到以后赋值。
+3. `const` 的作用域与 `let` 命令相同：只在声明所在的块级域内有效。
+4. `const` 命令声明的常量也是不提升，同样存在暂时性死区，只能在声明的位置后面使用。
+5. `const` 声明的常量，也与 `let` 一样不可重复声明。
+
+**本质：**
+
+`const` 实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指针，`const` 只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制了，因此一个对象声明为常量必须非常小心。
+
+如果需要把对象冻结，可使用 `Object.freeze` 方法。这个方法会将 `const` 声明的对象锁定，将不能添加新属性，但是对象的属性没有被冻结，若需要将一个对象彻底冻结
